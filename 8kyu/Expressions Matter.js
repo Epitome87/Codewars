@@ -63,3 +63,21 @@ ALL translations are welcomed
 Enjoy Learning !!
 Zizou
 */
+
+// My eh solution:
+function expressionMatter(a, b, c) {
+  const results = [];
+
+  results.push(a * (b + c));
+  results.push(a * b * c);
+  results.push(a + b * c);
+  results.push((a + b) * c);
+  results.push(a + b + c);
+
+  return Math.max(...results);
+}
+
+// Top user solution:
+function expressionMatter(a, b, c) {
+  return Math.max(a + b + c, a * b * c, a * (b + c), (a + b) * c, a + b * c, a * b + c);
+}
