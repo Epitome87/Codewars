@@ -31,6 +31,18 @@ N.B. You should assume that all the test input will be valid, as specified above
 P.S. The situation in this kata can be likened to the more-computer-science-related idea of a thread pool, with relation to running multiple processes at the same time: https://en.wikipedia.org/wiki/Thread_pool
 */
 
+// My solution:
+function queueTime(customers, n) {
+  let tills = Array(n).fill(0);
+
+  customers.forEach((customer) => {
+    let nextTill = tills.indexOf(Math.min(...tills));
+    tills[nextTill] += customer;
+  });
+
+  return Math.max(...tills);
+}
+
 // Top user solution, with comments!:
 function queueTime(customers, n) {
   // creates an array of length n representing the tills
