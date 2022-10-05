@@ -22,8 +22,6 @@ Since the sum of its digits' factorial of 2! = 2 is equal to number itself, then
 
 strong_num(150) ==> return "Not Strong !!"
 Since the sum of its digits' factorial of 1! + 5! + 0! = 122 is not equal to number itself, Then it's Not Strong .
-
-
 */
 
 // My solution:
