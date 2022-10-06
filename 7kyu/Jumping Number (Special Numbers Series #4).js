@@ -67,6 +67,6 @@ function jumpingNumber(n) {
 }
 
 /* Takeaways:
-1) Instead of n.toString().split(''), we can do: [...n + '']
-2) Instead of n.split('') we can do: [...n]
+1) If we want to map over n (Number), instead of n.toString().split(''), we can do: [...n + '']
+2) If n is already a string, instead of n.split('') we can do: [...n]
 */
