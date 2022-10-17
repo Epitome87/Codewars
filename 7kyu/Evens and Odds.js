@@ -1,0 +1,13 @@
+/*
+This kata is about converting numbers to their binary or hexadecimal representation:
+
+If a number is even, convert it to binary.
+If a number is odd, convert it to hex.
+Numbers will be positive. The hexadecimal string should be lowercased.
+*/
+
+// My solution:
+const evensAndOdds = (num) => (num % 2 ? num.toString(16) : num.toString(2));
+
+// Top user solution:
+const evensAndOdds = (n) => n.toString(n % 2 ? 16 : 2);
