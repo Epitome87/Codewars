@@ -10,7 +10,14 @@ Sum: (10 - 2) + (2 - 1) = 8 + 1 = 9
 If the array is empty or the array has only one element the result should be 0 (Nothing in Haskell, None in Rust).
 */
 
-// My solution:
+// My second-attempt solution:
+const sumOfDifferences = (arr) => {
+  if (!arr || arr.length < 2) return 0;
+  const sorted = [...arr].sort((a, b) => b - a);
+  return sorted[0] - sorted[sorted.length - 1];
+};
+
+// My first-solution:
 const sumOfDifferences = (arr) => {
   if (arr.length <= 1) return 0;
 
@@ -35,6 +42,6 @@ const sumOfDifferences = (arr) =>
 
 /* Takeaways:
 1) Always look for mathematical solutions! 
-If you have the array [a,b,c] (already sorted in decending order), then the solution would be (a-b)+(b-c) = a-c+b-b = a-c.
+If you have the array [a,b,c] (already sorted in descending order), then the solution would be (a-b)+(b-c) = a-c+b-b = a-c.
 All elements other than the maximum and minimum get canceled out.
 */
