@@ -45,10 +45,8 @@ When you have finished the work, click "Run Tests" to see if your code is workin
 In the end, click "Submit" to submit your code pass this kata.
 */
 
-// My solution:
+// My first-attempt solution:
 const saleHotdogs = (n) => (n < 5 ? n * 100 : n >= 10 ? n * 90 : n * 95);
 
-// Clever user solution:
-function saleHotdogs(n) {
-  return n * (n < 5 ? 100 : n < 10 ? 95 : 90);
-}
+// My second-attempt solution:
+const saleHotdogs = (n) => n * (n < 5 ? 100 : n < 10 ? 95 : 90);
