@@ -10,7 +10,9 @@ Notes
 Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 */
 
-// My solution, which I know isn't good! As of 7/5/2022, this was my hardest Kata I attempted.
+/* My solution, which I know isn't good! As of 7/5/2022, this was my hardest Kata I attempted.
+Update 10/26/22: Tried this again, and it was very easy!
+*/
 const duplicateEncode = (word) => {
   const wordObject = {};
 
@@ -28,8 +30,11 @@ const duplicateEncode = (word) => {
     .join('');
 };
 
+// My second-attempt solution:
+const duplicateEncode = (word) =>
+  [...word.toLowerCase()].map((c, _, w) => (w.indexOf(c) === w.lastIndexOf(c) ? '(' : ')')).join('');
+
 // Top user solution:
-/*
 function duplicateEncode(word) {
   return word
     .toLowerCase()
@@ -39,6 +44,7 @@ function duplicateEncode(word) {
     })
     .join('');
 }
-*/
 
-// TODO: Some observations on top solution. It lowerCases intelligently at the start, to avoid doing it multiple times like mine. It makes use of indexOf and lastIndexOf, using the fact that if they are different, the character must be present at least twice!
+/* Takeaways:
+1) Some observations on top solution. It lowerCases intelligently at the start, to avoid doing it multiple times like mine. It makes use of indexOf and lastIndexOf, using the fact that if they are different, the character must be present at least twice!
+*/
