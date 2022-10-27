@@ -17,13 +17,13 @@ Since the 3rd word is 'string'(starting from 0 remember) and the third paramater
 Simple. Good luck.
 */
 
-// My solution:
+// My second-attempt solution:
+const modifyMultiply = (str, loc, num) => Array(num).fill(str.split(' ')[loc]).join('-');
+
+// My first-attempt solution:
 const modifyMultiply = (str, loc, num) => (str.split(' ')[loc] + '-').repeat(num).slice(0, -1);
 
 // Top user solution:
 function modifyMultiply(str, i, n) {
   return Array(n).fill(str.split(' ')[i]).join('-');
 }
-
-// Another good user solution:
-const modifyMultiply = (s, loc, num) => new Array(num).fill(s.split(' ')[loc]).join('-');
