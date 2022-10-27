@@ -14,7 +14,10 @@ character   = "z"
 text after  = "zzz"
 */
 
-// My solution:
+// My second-attempt solution:
+const contamination = (text, char) => char.repeat(text.length);
+
+// My first-attempt solution:
 const contamination = (text, char) =>
   text
     .split('')
