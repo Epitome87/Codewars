@@ -17,13 +17,11 @@ Examples
 -3  =>  -3
 */
 
-// My solution:
-const getRealFloor = (n) => (n >= 13 ? n - 2 : n > 1 ? n - 1 : n === 1 ? 0 : n);
+// My second-attempt solution (and top user):
+const getRealFloor = (n) => (n > 13 ? n - 2 : n > 0 ? n - 1 : n);
 
-// Top user solution:
-function getRealFloor(n) {
-  return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
-}
+// My odd first-attempt solution:
+const getRealFloor = (n) => (n >= 13 ? n - 2 : n > 1 ? n - 1 : n === 1 ? 0 : n);
 
 // Another good user solution:
 const getRealFloor = (n) => {
