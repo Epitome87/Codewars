@@ -19,9 +19,18 @@ var group = {
 }
 
 splitTheBill(group) // returns {A: 5, B: 0, C: -5}
- */
+*/
 
-// My straightforward solution:
+// My second-attempt solution:
+const splitTheBill = (x) => {
+  const average = Object.values(x).reduce((sum, curr) => sum + curr, 0) / Object.entries(x).length;
+  return Object.entries(x).reduce((acc, curr) => {
+    acc[curr[0]] = +parseFloat(curr[1] - average).toFixed(2);
+    return acc;
+  }, {});
+};
+
+// My first-attempt solution:
 const splitTheBill = (x) => {
   const billPerPerson = Object.values(x).reduce((acc, curr) => acc + curr, 0) / Object.values(x).length;
 
