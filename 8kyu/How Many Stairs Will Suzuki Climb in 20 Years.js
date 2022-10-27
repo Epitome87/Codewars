@@ -42,13 +42,10 @@ const stairsIn20 = (s) => s.reduce((sum, curr) => sum + curr.reduce((sum, curr) 
 const stairsIn20 = (s) => s.flat().reduce((sum, curr) => sum + curr, 0) * 20;
 
 // Good user solution:
-function stairsIn20(s) {
-  var arr = [].concat(...s);
-  var newArr = [].concat(...arr);
-  return newArr.reduce((a, b) => a + b) * 20;
-}
+const stairsIn20 = (s) => [].concat(...s).reduce((sum, curr) => sum + curr, 0) * 20;
 
 /* Takeaways:
 1) [].concat(...s) cannot always be replaced with [...s], as in the case with the newArr variable in the user solution. Why is this?
 2) Remember the flat() method for arrays!
+3) Instead of using flat(), consider: [].concat(...arr);
 */
