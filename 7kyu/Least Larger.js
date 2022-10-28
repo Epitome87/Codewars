@@ -12,6 +12,9 @@ leastLarger( [4, 1, 3, 5, 6], 0 )  =>  3
 leastLarger( [4, 1, 3, 5, 6], 4 )  => -1
 */
 
+// My second-attempt solution:
+const leastLarger = (a, i) => a.indexOf(a.filter((n) => n > a[i]).sort((a, b) => a - b)[0]);
+
 // My eh solution:
 const leastLarger = (arr, index) => {
   const target = arr[index];
