@@ -14,7 +14,7 @@ const hammingWeight = (x) =>
   x
     .toString(2)
     .split('')
-    .reduce((acc, curr) => (curr === '1' ? acc + 1 : acc)).length;
+    .reduce((acc, curr) => (curr === '1' ? acc + 1 : acc));
 
 /* Takeaways:
 1) Learn bit operations!
