@@ -14,6 +14,8 @@ mixed_capitals: [{"state" : 'Maine', capital: 'Augusta'}, {country: 'Spain', "ca
 capital(mixed_capitals)[1] // returns "The capital of Spain is Madrid"
 */
 
+// Matthew's Note: This Kata is actually called "Find the Capitals", which shares its name with another Kata in my collection.
+
 // My solution:
 const capital = (caps) => caps.map((cap) => `The capital of ${cap.state ? cap.state : cap.country} is ${cap.capital}`);
 
