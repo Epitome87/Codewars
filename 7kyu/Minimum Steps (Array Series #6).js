@@ -43,14 +43,25 @@ Expected Time Complexity O(n Log n)
 // My very bad solution:
 const minimumSteps = (nums, value) => {
   const sorted = [...nums].sort((a, b) => a - b);
-  let sum = sorted[0] + sorted[1];
-  if (sorted[0] > value) return 0;
-  if (sum >= value) return 1;
-  let steps = 1;
-
-  for (let i = 2; i < sorted.length; i++) {
-    sum += sorted[i];
+  let sum = 0;
+  let steps = 0;
+  for (let num of sorted) {
+    sum += num;
     steps++;
-    if (sum >= value) return steps;
+    if (sum >= value) return steps - 1;
   }
 };
+
+// Top user solution:
+function minimumSteps(numbers, value) {
+  const nums = numbers.slice().sort((a, b) => a - b);
+  for (let i = 0, sum = 0; i < nums.length; i++) {
+    sum += nums[i];
+    if (sum >= value) {
+      return i;
+    }
+  }
+}
+
+// Clever user solution:
+const minimumSteps = (numbers, value) => numbers.sort((a, b) => a - b).filter((val) => (value -= val) > 0).length;
