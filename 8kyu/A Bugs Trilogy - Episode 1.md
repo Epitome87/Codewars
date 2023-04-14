@@ -1,4 +1,7 @@
-/*
+# A Bugs Trilogy - Episode 1 - "Let Math.Random(); Decide Your Future"
+
+## Description
+
 Our friend Pac has finally decided to pursue a career in the coding industry.
 He is a newbie, he needs to learn properly.
 Therefore, Pac wants to apply for the worldwide famous -and very demanding-
@@ -6,41 +9,49 @@ Therefore, Pac wants to apply for the worldwide famous -and very demanding-
 In order to join, Pac is required to solve a series of 3 exercises about 'Bug Fixes'.
 He has been sent an email from the Academy with the following instructions,
 
-Dear Pac,  
-This is the first exercise. Find out what's wrong and fix the code.  
-You have 15 minutes to send a solution.  
+```
+Dear Pac,
+This is the first exercise. Find out what's wrong and fix the code.
+You have 15 minutes to send a solution.
 Good Luck.
+```
+
 This code is a mess! Would you help Pac to fix the code in time?
 
-(This might be helpful -> Math.random();)
+(This might be helpful -> [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random))
 
 This is my first Kata, so please any feedback (especially on Test Cases) is welcome!
 
 Original code:
+
+```js
 function {
 	var : Math.random()
 		if (career <= 0.32) {
 			return = FrontEnd Developer
-		 else if (career <= 0.65) 
+		 else if (career <= 0.65)
 			return : BackEnd Developer,
 		} else {
 			return 'Full-Stack Developer'
 		}
 
-
 yourFutureCareer();
-*/
+```
 
-// My solution:
+## My Solution
+
+**JavaScript**
+
+```js
+const yourFutureCareer = (career = Math.random()) =>
+  career <= 0.32 ? 'FrontEnd Developer' : career <= 0.65 ? 'BackEnd Developer' : 'Full-Stack Developer';
+```
+
+```js
 const yourFutureCareer = () => {
   const career = Math.random();
   if (career <= 0.32) return 'FrontEnd Developer';
   if (career <= 0.65) return 'BackEnd Developer';
   return 'Full-Stack Developer';
 };
-
-// Clever user solution:
-const yourFutureCareer = () => {
-  let career = Math.random();
-  return `${career <= 0.32 ? 'FrontEnd' : career <= 0.65 ? 'BackEnd' : 'Full-Stack'} Developer`;
-};
+```
