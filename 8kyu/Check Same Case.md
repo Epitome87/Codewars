@@ -1,10 +1,15 @@
-/*
+# [Check Same Case](https://www.codewars.com/kata/5dd462a573ee6d0014ce715b)
+
+## Description
+
 Write a function that will check if two given characters are the same case.
 
 If either of the characters is not a letter, return -1
 If both characters are the same case, return 1
 If both characters are letters, but not the same case, return 0
-Examples
+
+**Examples**
+
 'a' and 'g' returns 1
 
 'A' and 'C' returns 1
@@ -14,9 +19,12 @@ Examples
 'B' and 'g' returns 0
 
 '0' and '?' returns -1
-*/
 
-// My solution:
+## My Solution
+
+**JavaScript**
+
+```js
 const sameCase = (a, b) => {
   if (!/[a-zA-Z]/.test(a) || !/[a-zA-Z]/.test(b)) return -1;
 
@@ -26,8 +34,23 @@ const sameCase = (a, b) => {
   if (charACase === charBCase) return 1;
   if (charACase !== charBCase) return 0;
 };
+```
 
-// Top user solution:
+**TypeScript**
+
+```ts
+export const sameCase = (a: string, b: string): number => {
+  if (/[^a-z]/gi.test(`${a}${b}`)) return -1;
+  if ((/[a-z]/.test(a) && /[a-z]/.test(b)) || (/[A-Z]/.test(a) && /[A-Z]/.test(b))) return 1;
+  return 0;
+};
+```
+
+### User Solution
+
+**JavaScript**
+
+```js
 function sameCase(a, b) {
   if (a.toUpperCase() === a.toLowerCase() || b.toLowerCase() === b.toUpperCase()) {
     return -1;
@@ -37,7 +60,8 @@ function sameCase(a, b) {
     return 0;
   }
 }
+```
 
-/* Takeaways:
-1) The user's way to test for a letter was clever, if we want to avoid Regex.
-*/
+## Takeaways
+
+1. The user's way to test for a letter was clever, if we want to avoid Regex.
