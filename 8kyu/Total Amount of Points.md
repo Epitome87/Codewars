@@ -1,4 +1,7 @@
-/*
+# [Total Amount of Points](https://www.codewars.com/kata/5bb904724c47249b10000131)
+
+## Description
+
 Our football team finished the championship. The result of each match look like "x:y". Results of all matches are recorded in the collection.
 
 For example: ["3:1", "2:2", "0:1", ...]
@@ -13,9 +16,12 @@ Notes:
 there are 10 matches in the championship
 0 <= x <= 4
 0 <= y <= 4
-*/
 
-// MY simple solution
+## My Solution
+
+**JavaScript**
+
+```js
 function points(games) {
   let score = 0;
 
@@ -29,8 +35,9 @@ function points(games) {
 
   return score;
 }
+```
 
-// Using higher-order array methods
+```js
 function points(games) {
   let score = 0;
 
@@ -45,6 +52,21 @@ function points(games) {
 
   return score;
 }
+```
 
-// Super-clever solution!
+**TypeScript**
+
+```ts
+export const points = (games: string[]): number =>
+  games
+    .map((el) => el.split(':'))
+    .reduce((acc, [team, opponent]) => acc + (team > opponent ? 3 : team < opponent ? 0 : 1), 0);
+```
+
+### User Solution
+
+**JavaScript**
+
+```js
 const points = (g) => g.reduce((a, [x, _, y]) => a + (x > y ? 3 : x == y), 0);
+```
