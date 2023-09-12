@@ -29,6 +29,13 @@ Part 1: [Inverted Index](https://www.codewars.com/kata/5af823451839f1768f00009d/
 
 ```js
 const buildInvertedIndex = (collection, term, caseSensitive, exactMatch) =>
+  collection
+    .map((el, i) => el.match(new RegExp(exactMatch ? `\\b${term}\\b` : term, caseSensitive ? '' : 'i')) && ++i)
+    .filter(Boolean);
+```
+
+```js
+const buildInvertedIndex = (collection, term, caseSensitive, exactMatch) =>
   Object.keys(collection)
     .filter((key) => new RegExp(exactMatch ? `\\b${term}\\b` : term, caseSensitive ? '' : 'i').test(collection[key]))
     .map((i) => +i + 1);
