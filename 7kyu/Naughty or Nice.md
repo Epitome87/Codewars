@@ -1,42 +1,33 @@
-# [Naughty or Nice?](https://www.codewars.com/kata/585eaef9851516fcae00004d)
+# [Naughty or Nice](https://www.codewars.com/kata/5662b14e0a1fb8320a00005c)
 
 ## Description
 
-In this kata, you will write a function that receives an array of string and returns a string that is either 'naughty' or 'nice'. Strings that start with the letters b, f, or k are naughty. Strings that start with the letters g, s, or n are nice. Other strings are neither naughty nor nice.
+Santa is coming to town and he needs your help finding out who's been naughty or nice. You will be given an entire year of JSON data following this format:
 
-If there is an equal amount of bad and good actions, return 'naughty'
-
-Examples:
-
+```js
+{
+    January: {
+        '1': 'Naughty','2': 'Naughty', ..., '31': 'Nice'
+    },
+    February: {
+        '1': 'Nice','2': 'Naughty', ..., '28': 'Nice'
+    },
+    ...
+    December: {
+        '1': 'Nice','2': 'Nice', ..., '31': 'Naughty'
+    }
+}
 ```
-bad_actions = ['broke someone\'s window', 'fought over a toaster', 'killed a bug']
-whatListAmIOn(bad_actions)
-#-> 'naughty'
-good_actions = ['got someone a new car', 'saved a man from drowning', 'never got into a fight']
-what_list_am_i_on(good_actions)
-#-> 'nice'
-actions = ['broke a vending machine', 'never got into a fight', 'tied someone\'s shoes']
-what_list_am_i_on(actions)
-#-> 'naughty'
-```
+
+Your function should return `"Naughty!"` or `"Nice!"` depending on the total number of occurrences in a given year (whichever one is greater). If both are equal, return `"Nice!"`
 
 ## My Solution
 
 **JavaScript**
 
 ```js
-const whatListAmIOn = (actions) => {
-  const points = actions.reduce((acc, cur) => acc + (/^[bfk]/.test(cur) ? -1 : /^[gsn]/.test(cur) ? 1 : 0), 0);
-  return points <= 0 ? 'naughty' : 'nice';
-};
-```
-
-```js
-const whatListAmIOn = (actions) => {
-  const points = actions.map((action) => (/^[bfk]/.test(action) ? -1 : /^[gsn]/.test(action) ? 1 : 0));
-  const totalPoints = points.reduce((acc, cur) => acc + cur, 0);
-  return totalPoints <= 0 ? 'naughty' : 'nice';
-};
+const naughtyOrNice = (data, str = JSON.stringify(data)) =>
+  str.match(/Naughty/g).length > str.match(/Nice/g).length ? 'Naughty!' : 'Nice!';
 ```
 
 ### User Solution
@@ -44,6 +35,15 @@ const whatListAmIOn = (actions) => {
 **JavaScript**
 
 ```js
-const whatListAmIOn = (actions) =>
-  actions.reduce((pre, val) => pre + /^[gsn]/.test(val) - /^[bfk]/.test(val), 0) > 0 ? `nice` : `naughty`;
+const naughtyOrNice = (data) => {
+  let naughtyMeter = 0;
+
+  for (const month in data) {
+    for (const day in data[month]) {
+      naughtyMeter += data[month][day] === 'Nice' ? 1 : -1;
+    }
+  }
+
+  return naughtyMeter < 0 ? 'Naughty!' : 'Nice!';
+};
 ```
