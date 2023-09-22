@@ -1,11 +1,15 @@
-/*
+# [+1 Array](https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9)
+
+## Description
+
 Given an array of integers of any length, return an array that has 1 added to the value represented by the array.
 
 the array can't be empty
 only non-negative, single digit integers are allowed
 Return nil (or your language's equivalent) for invalid inputs.
 
-Examples
+**Examples**
+
 Valid arrays
 
 [4, 3, 2, 5] would return [4, 3, 2, 6]
@@ -16,10 +20,13 @@ Valid arrays
 Invalid arrays
 
 [1, -9] is invalid because -9 is not a non-negative integer
-
 [1, 2, 33] is invalid because 33 is not a single-digit integer
-*/
 
+## My Solution
+
+**JavaScript**
+
+```js
 const upArray = (arr) => {
   if (!arr || !arr.length) return null;
   if (arr.some((n) => n < 0 || n > 9)) return null;
@@ -36,8 +43,13 @@ const upArray = (arr) => {
 
   return plusOne;
 };
+```
 
-// My favorite user solution:
+### User Solution
+
+**JavaScript**
+
+```js
 function upArray(arr) {
   if (arr.length == 0 || arr.some((e) => e < 0 || e > 9)) return null;
 
@@ -50,3 +62,11 @@ function upArray(arr) {
 
   return arr;
 }
+```
+
+```js
+const upArray = (arr) =>
+  !arr.length || arr.some((val) => val < 0 || val > 9)
+    ? null
+    : [...arr.join(``).replace(/(\d)(9*$)/, (_, $1, $2) => ++$1 + `0`.repeat($2.length))].map(Number);
+```
