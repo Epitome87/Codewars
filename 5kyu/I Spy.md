@@ -1,14 +1,18 @@
-/*
+# [I Spy](https://www.codewars.com/kata/555185132c0d4cca3d000197)
+
+## Description
+
 NOTE: The test cases for this kata are broken, but for some reason CodeWars has locked them and I cannot edit them. Specifically, the returned function is not propertly testing that old values are remembered. If and when I can fix the problem, I will, but I don't see any way to do that due to the lock.
 
 In testing, a spy function is one that keeps track of various metadata regarding its invocations. Some examples of properties that a spy might track include:
 
-Whether it was invoked
-How many times it was invoked
-What arguments it was called with
-What contexts it was called in
-What values it returned
-Whether it threw an error
+- Whether it was invoked
+- How many times it was invoked
+- What arguments it was called with
+- What contexts it was called in
+- What values it returned
+- Whether it threw an error
+
 For this kata, implement a spyOn function which takes any function func as a parameter and returns a spy for func. The returned spy must be callable in the same manner as the original func, and include the following additional properties/methods:
 
 .callCount() — returns the number of times spy has been called
@@ -26,9 +30,12 @@ adderSpy.wasCalledWith(4); // true
 adderSpy.wasCalledWith(0); // false
 adderSpy.returned(8); // true
 adderSpy.returned(0); // false
-*/
 
-// My solution:
+## My Solution
+
+**JavaScript**
+
+```js
 const spyOn = (func) => {
   let count = 0;
   let calls = new Set();
@@ -48,3 +55,4 @@ const spyOn = (func) => {
 
   return spy;
 };
+```
