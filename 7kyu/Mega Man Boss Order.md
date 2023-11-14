@@ -1,4 +1,4 @@
-# [Mega Man Boss Order](https://www.codewars.com/kata/https://www.codewars.com/kata/5a6bdb36ba1bb58691000060)
+# [Mega Man Boss Order](https://www.codewars.com/kata/5a6bdb36ba1bb58691000060)
 
 ## Description
 

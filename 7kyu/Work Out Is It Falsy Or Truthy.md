@@ -1,4 +1,4 @@
-# [Work Out Is It Falsy Or Truthy?](https://www.codewars.com/kata/https://www.codewars.com/kata/583310c5dbeb310c34000352)
+# [Work Out Is It Falsy Or Truthy?](https://www.codewars.com/kata/583310c5dbeb310c34000352)
 
 ## Description
 

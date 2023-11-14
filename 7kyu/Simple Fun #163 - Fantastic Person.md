@@ -1,4 +1,4 @@
-# [Simple Fun #163: Fantastic Person](https://www.codewars.com/kata/https://www.codewars.com/kata/58afb7cea9c97a83a50000e3)
+# [Simple Fun #163: Fantastic Person](https://www.codewars.com/kata/58afb7cea9c97a83a50000e3)
 
 ## Description
 

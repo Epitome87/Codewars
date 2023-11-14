@@ -1,4 +1,4 @@
-# [Paperboy](https://www.codewars.com/kata/https://www.codewars.com/kata/56ed5f13c4e5d6c5b3000745)
+# [Paperboy](https://www.codewars.com/kata/56ed5f13c4e5d6c5b3000745)
 
 ## Description
 

@@ -1,4 +1,4 @@
-# [Get the Real Length of String. []](https://www.codewars.com/kata/https://www.codewars.com/kata/599c4b69eb8e49effa000079)
+# [Get the Real Length of String. []](https://www.codewars.com/kata/599c4b69eb8e49effa000079)
 
 ## Description
 

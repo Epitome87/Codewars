@@ -1,4 +1,4 @@
-# [Simple Fun #67: Array Change](https://www.codewars.com/kata/https://www.codewars.com/kata/5893f43b779ce54da4000124)
+# [Simple Fun #67: Array Change](https://www.codewars.com/kata/5893f43b779ce54da4000124)
 
 ## Description
 

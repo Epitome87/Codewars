@@ -1,4 +1,4 @@
-# [So Basic](https://www.codewars.com/kata/https://www.codewars.com/kata/563924c7fbc768197d000030)
+# [So Basic](https://www.codewars.com/kata/563924c7fbc768197d000030)
 
 ## Description
 

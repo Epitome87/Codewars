@@ -1,4 +1,4 @@
-# [Configure An Express Server](https://www.codewars.com/kata/https://www.codewars.com/kata/5696c8b5fddc42058b000032)
+# [Configure An Express Server](https://www.codewars.com/kata/5696c8b5fddc42058b000032)
 
 ## Description
 

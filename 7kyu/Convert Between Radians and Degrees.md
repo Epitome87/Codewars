@@ -1,4 +1,4 @@
-# [Convert Between Radians and Degrees](https://www.codewars.com/kata/https://www.codewars.com/kata/544e2c60908f2da03600022a)
+# [Convert Between Radians and Degrees](https://www.codewars.com/kata/544e2c60908f2da03600022a)
 
 ## Description
 

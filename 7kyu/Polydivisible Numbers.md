@@ -1,4 +1,4 @@
-# [Polydivisible Numbers](https://www.codewars.com/kata/https://www.codewars.com/kata/5e4217e476126b000170489b)
+# [Polydivisible Numbers](https://www.codewars.com/kata/5e4217e476126b000170489b)
 
 ## Description
 

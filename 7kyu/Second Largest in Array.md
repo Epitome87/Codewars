@@ -1,4 +1,4 @@
-# [Second Largest in Array](https://www.codewars.com/kata/https://www.codewars.com/kata/578fe7e2149935740f000525)
+# [Second Largest in Array](https://www.codewars.com/kata/578fe7e2149935740f000525)
 
 ## Description
 

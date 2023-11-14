@@ -1,4 +1,4 @@
-# [Just Adding and Multiplying](https://www.codewars.com/kata/https://www.codewars.com/kata/57b64627d2415635ac000529)
+# [Just Adding and Multiplying](https://www.codewars.com/kata/57b64627d2415635ac000529)
 
 ## Description
 
