@@ -1,4 +1,7 @@
-/*
+# [A Rule of Divisibility by 13](https://www.codewars.com/kata/564057bc348c7200bd0000ff)
+
+## Description
+
 From Wikipedia:
 
 "A divisibility rule is a shorthand way of determining whether a given integer is divisible by a fixed divisor without performing the division, usually by examining its digits."
@@ -7,31 +10,39 @@ When you divide the successive powers of 10 by 13 you get the following remainde
 
 1, 10, 9, 12, 3, 4 because:
 
+```
 10 ^ 0 ->  1 (mod 13)
 10 ^ 1 -> 10 (mod 13)
 10 ^ 2 ->  9 (mod 13)
 10 ^ 3 -> 12 (mod 13)
 10 ^ 4 ->  3 (mod 13)
 10 ^ 5 ->  4 (mod 13)
+```
+
 (For "mod" you can see: https://en.wikipedia.org/wiki/Modulo_operation)
 
 Then the whole pattern repeats. Hence the following method:
 
 Multiply
 
-the right most digit of the number with the left most number in the sequence shown above,
-the second right most digit with the second left most digit of the number in the sequence.
+- the right most digit of the number with the left most number in the sequence shown above,
+- the second right most digit with the second left most digit of the number in the sequence.
+
 The cycle goes on and you sum all these products. Repeat this process until the sequence of sums is stationary.
 
-Example:
+**Example:**
+
 What is the remainder when 1234567 is divided by 13?
 
+```
 7      6     5      4     3     2     1  (digits of 1234567 from the right)
 ×      ×     ×      ×     ×     ×     ×  (multiplication)
 1     10     9     12     3     4     1  (the repeating sequence)
+```
+
 Therefore following the method we get:
 
- 7×1 + 6×10 + 5×9 + 4×12 + 3×3 + 2×4 + 1×1 = 178
+7×1 + 6×10 + 5×9 + 4×12 + 3×3 + 2×4 + 1×1 = 178
 
 We repeat the process with the number 178:
 
@@ -43,15 +54,32 @@ and again with 87:
 
 From now on the sequence is stationary (we always get 87) and the remainder of 1234567 by 13 is the same as the remainder of 87 by 13 ( i.e 9).
 
-Task:
+**Task:**
+
 Call thirt the function which processes this sequence of operations on an integer n (>=0). thirt will return the stationary number.
 
 thirt(1234567) calculates 178, then 87, then 87 and returns 87.
 
 thirt(321) calculates 48, 48 and returns 48
-*/
 
-// My solution:
+## My Solution
+
+**JavaScript**
+
+```js
+const thirt = (n) => {
+  let sum = 0;
+  let lastSum = null;
+
+  while (sum !== lastSum) {
+    lastSum = sum;
+    n = sum = [...`${n}`].reverse().reduce((acc, cur, i) => acc + cur * [1, 10, 9, 12, 3, 4][i % 6], 0);
+    if (sum === lastSum) return sum;
+  }
+};
+```
+
+```js
 const thirt = (n) => {
   let sum = 0;
   let lastSum = -100;
@@ -72,8 +100,13 @@ const thirt = (n) => {
     if (sum === lastSum) return sum;
   }
 };
+```
 
-// Top user solution:
+### User Solution
+
+**JavaScript**
+
+```js
 function thirt(n) {
   const nums = [1, 10, 9, 12, 3, 4];
   var sum = ('' + n)
@@ -82,3 +115,4 @@ function thirt(n) {
     .reduce((sum, v, i) => sum + v * nums[i % nums.length], 0);
   return sum === n ? n : thirt(sum);
 }
+```
