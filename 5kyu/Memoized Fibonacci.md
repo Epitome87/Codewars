@@ -1,12 +1,16 @@
-/*
-Problem Context
+# [Memoized Fibonacci](https://www.codewars.com/kata/529adbf7533b761c560004e5)
+
+## Description
+
 The Fibonacci sequence is traditionally used to explain tree recursion.
 
+```js
 function fibonacci(n) {
-    if(n==0 || n == 1)
-        return n;
-    return fibonacci(n-1) + fibonacci(n-2);
+  if (n == 0 || n == 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }
+```
+
 This algorithm serves welll its educative purpose but it's tremendously inefficient, not only because of recursion, but because we invoke the fibonacci function twice, and the right branch of recursion (i.e. fibonacci(n-2)) recalculates all the Fibonacci numbers already calculated by the left branch (i.e. fibonacci(n-1)).
 
 This algorithm is so inefficient that the time to calculate any Fibonacci number over 50 is simply too much. You may go for a cup of coffee or go take a nap while you wait for the answer. But if you try it here in Code Wars you will most likely get a code timeout before any answers.
@@ -16,9 +20,12 @@ For this particular Kata we want to implement the memoization solution. This wil
 The trick of the memoized version is that we will keep a cache data structure (most likely an associative array) where we will store the Fibonacci numbers as we calculate them. When a Fibonacci number is calculated, we first look it up in the cache, if it's not there, we calculate it and put it in the cache, otherwise we returned the cached number.
 
 Refactor the function into a recursive Fibonacci function that using a memoized data structure avoids the deficiencies of tree recursion. Can you make it so the memoization cache is private to this function?
-*/
 
-// My (researched) solution:
+## My Solution
+
+**JavaScript**
+
+```js
 const fibonacci = (n) => {
   const cache = {};
 
@@ -31,8 +38,10 @@ const fibonacci = (n) => {
 
   return fib(n);
 };
+```
 
-// Mine refactored to use IIFE:
+```js
+// Refactored to use IIFE:
 const fibonacci = ((n) => {
   const cache = {};
 
@@ -43,8 +52,13 @@ const fibonacci = ((n) => {
     return (cache[n] = fibonacci(n - 1) + fibonacci(n - 2));
   };
 })();
+```
 
-// Top user solution:
+### User Solution
+
+**JavaScript**
+
+```js
 var fibonacci = (function () {
   var cache = {};
 
@@ -59,8 +73,9 @@ var fibonacci = (function () {
     return cache[n - 1] + cache[n - 2];
   };
 })(); // Immediately invoke to create a closure for the cache variable
+```
 
-// Another good user solution:
+```js
 var memo = function (f) {
   var cache = {};
   return function (n) {
@@ -73,3 +88,4 @@ var fibonacci = memo(function (n) {
   if (n == 0 || n == 1) return n;
   return fibonacci(n - 1) + fibonacci(n - 2);
 });
+```
