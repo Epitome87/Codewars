@@ -13,3 +13,22 @@ Your code will show Full name of the neighbor and the truncated version of the n
 ```js
 const whoIsPaying = (name) => (name.length <= 2 ? [name] : [name, name.slice(0, 2)]);
 ```
+
+**Python**
+
+```py
+def who_is_paying(name):
+    if len(name) <= 2:
+        return [name]
+    else:
+        return [name, name[:2]]
+```
+
+### User Solution
+
+**Python**
+
+```py
+def who_is_paying(name):
+    return [name] if len(name) <= 2 else [name, name[:2]]
+```
