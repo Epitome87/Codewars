@@ -24,6 +24,16 @@ const between = (a, b) => [...Array(b - a + 1)].map((_, i) => a + i);
 const between = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => i + a);
 ```
 
+**Python**
+
+```py
+def between(a,b):
+    result = []
+    for i in range(a, b + 1):
+        result.append(i)
+    return result
+```
+
 ### User Solution
 
 **JavaScript**
@@ -32,4 +42,16 @@ const between = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => i + a);
 function between(a, b) {
   return [...Array(b - a + 1).keys()].map((num) => num + a);
 }
+```
+
+**Python**
+
+```py
+def between(a,b):
+    return list(range(a,b+1))
+```
+
+```py
+def between(a,b):
+    return [result for result in range(a,b+1)]
 ```
