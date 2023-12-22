@@ -18,6 +18,8 @@ As usual, your function/method should be pure, i.e. it should not mutate the ori
 
 ## My Solution
 
+**JavaScript**
+
 ```js
 String.prototype.toAlternatingCase = function () {
   return [...this].map((c) => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())).join('');
@@ -31,3 +33,46 @@ String.prototype.toAlternatingCase = function () {
     .join('');
 };
 ```
+
+**Python**
+
+```py
+def to_alternating_case(string):
+    result = ''
+    for i in string:
+        if i == i.upper():
+            result += i.lower()
+        else:
+            result += i.upper()
+    return result
+```
+
+### User Solution
+
+**Python**
+
+```py
+def to_alternating_case(string):
+    return string.swapcase()
+```
+
+```py
+def to_alternating_case(string):
+    return ''.join(c.upper() if c.islower() else c.lower() for c in string)
+```
+
+```py
+def to_alternating_case(string):
+    new_string = ''
+    for char in string:
+        if char.isupper():
+            new_string += char.lower()
+        else:
+            new_string += char.upper()
+    return new_string
+```
+
+## Takeaways
+
+1. For Python, use `char.isupper()` instead of `if char == char.upper()`. Similiarly, use `char.islower()`.
+2. And obviously remember `string.swapcase()`!
