@@ -29,3 +29,11 @@ const a = 'code';
 const b = 'wa.rs';
 export const name = a + b;
 ```
+
+**Python**
+
+```py
+a = "code"
+b = "wa.rs"
+name = a + b
+```
