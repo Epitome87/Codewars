@@ -1,4 +1,4 @@
-#
+# [Is n Divisible by x and y?](https://www.codewars.com/kata/5545f109004975ea66000086)
 
 ## Description
 
@@ -43,4 +43,11 @@ const isDivisible = (n, x, y) => !(n % x || n % y);
 
 ```sql
 SELECT id, (n % x = 0 AND n % y = 0) AS res FROM kata;
+```
+
+**Python**
+
+```py
+def is_divisible(n, x, y):
+    return n % x == 0 and n % y == 0
 ```
