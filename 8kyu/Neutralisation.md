@@ -45,10 +45,30 @@ const neutralise = (s1, s2) => s1.replace(/./g, (match, idx) => (match !== s2[id
 const neutralise = (s1, s2) => [...s1].reduce((acc, cur, idx) => acc + (cur === s2[idx] ? cur : '0'), '');
 ```
 
+**Python**
+
+```py
+def neutralise(s1, s2):
+    result = ''
+    for i in range(0, len(s1)):
+        if s1[i] != s2[i]:
+            result += '0'
+        else:
+            result += '-' if s1[i] == '-' else '+'
+    return result
+```
+
 ### User Solution
 
 **JavaScript**
 
 ```js
 const neutralise = (str1, str2) => str1.replace(/./g, (chr, idx) => +(chr === str2[idx]) && chr);
+```
+
+**Python**
+
+```py
+def neutralise(s1, s2):
+    return ''.join('0' if i != j else i for i, j in zip(s1, s2))
 ```
