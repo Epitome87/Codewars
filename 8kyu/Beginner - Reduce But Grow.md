@@ -21,3 +21,23 @@ const grow = (x) => x.reduce((acc, curr) => acc * curr, 1);
 ```ts
 export const grow = (arr: number[]): number => arr.reduce((product, curr) => product * curr, 1);
 ```
+
+**Python**
+
+```py
+def grow(arr):
+    result = 1;
+    for item in arr:
+        result *= item
+    return result
+```
+
+### User Solution
+
+**Python**
+
+```py
+import math
+def grow(arr):
+    return math.prod(arr)
+```
