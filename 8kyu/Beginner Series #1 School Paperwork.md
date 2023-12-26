@@ -28,3 +28,19 @@ const paperwork = (n, m) => (n < 0 || m < 0 ? 0 : n * m);
 ```ts
 export const paperwork = (n: number, m: number): number => (n < 0 || m < 0 ? 0 : n * m);
 ```
+
+**Python**
+
+```py
+def paperwork(n, m):
+    return 0 if (n < 0 or m < 0) else n * m
+```
+
+### User Solution
+
+**Python**
+
+```py
+def paperwork(n, m):
+    return max(n, 0)*max(m, 0)
+```
