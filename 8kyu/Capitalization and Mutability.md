@@ -35,3 +35,10 @@ const capitalizeWord = (word) => word.replace(word.charAt(0), word.charAt(0).toU
 ```js
 const capitalizeWord = (word) => word.replace(/^\w/, (val) => val.toUpperCase());
 ```
+
+**Python**
+
+```py
+def capitalize_word (word : str) -> str:
+    return word.capitalize()
+```
