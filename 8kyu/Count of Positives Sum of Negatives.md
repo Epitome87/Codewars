@@ -33,3 +33,12 @@ const countPositivesSumNegatives = (input) => {
   return [countOfPositives, sumOfNegatives];
 };
 ```
+
+**Python**
+
+```py
+def count_positives_sum_negatives(arr):
+    positives = len([x for x in arr if x > 0])
+    negatives = sum([x for x in arr if x < 0])
+    return [positives, negatives] if arr else []
+```
