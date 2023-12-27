@@ -30,12 +30,33 @@ const countBy = (x, n) =>
     .map((num, index) => (index + 1) * x);
 ```
 
+**Python**
+
+```py
+count_by = lambda x, n: [x * i for i in range(1, n + 1)]
+```
+
+```py
+def count_by(x, n):
+    result = []
+    for i in range(0, n):
+        result.append(x * (i + 1))
+    return result
+```
+
 ## User Solution
 
 **JavaScript**
 
 ```js
 const countBy = (x, n) => [...Array(n)].map((_, idx) => ++idx * x);
+```
+
+**Python**
+
+```py
+def count_by(x, n):
+    return list(range(x, n * x + 1, x))
 ```
 
 ## Takeaways
