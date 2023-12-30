@@ -26,3 +26,18 @@ const addLength = (str) => str.split(' ').map((s) => s + ' ' + s.length);
 ```js
 const addLength = (str) => str.split(' ').reduce((acc, curr) => [...acc, `${curr} ${curr.length}`], []);
 ```
+
+**Python**
+
+```py
+add_length = lambda str: [f"{word} {len(word)}" for word in str.split(' ')]
+```
+
+### User Solution
+
+**Python**
+
+```py
+def add_length(s):
+    return ['%s %d' % (x, len(x)) for x in s.split()]
+```
