@@ -1,4 +1,4 @@
-# Function 2 - Squaring an Argument
+# [Function 2 - Squaring an Argument](https://www.codewars.com/kata/523b623152af8a30c6000027)
 
 ## Description
 
@@ -18,4 +18,10 @@ const square = (n) => Math.pow(n, 2);
 
 ```ts
 export const square = (num: number): number => num ** 2;
+```
+
+**Python**
+
+```py
+square = lambda n: n * n
 ```
