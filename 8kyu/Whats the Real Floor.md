@@ -1,4 +1,7 @@
-/*
+# [What's the Real Floor?](https://www.codewars.com/kata/574b3b1599d8f897470018f6)
+
+## Description
+
 Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
 
 Write a function that given a floor in the american system returns the floor in the european system.
@@ -7,25 +10,30 @@ With the 1st floor being replaced by the ground floor and the 13th floor being r
 
 Basements (negatives) stay the same as the universal level.
 
-More information here
-
+```
 Examples
-1  =>  0 
+1  =>  0
 0  =>  0
 5  =>  4
 15  =>  13
 -3  =>  -3
-*/
+```
 
-// My second-attempt solution (and top user):
+## My Solution
+
+**JavaScript**
+
+```js
 const getRealFloor = (n) => (n > 13 ? n - 2 : n > 0 ? n - 1 : n);
+```
 
-// My odd first-attempt solution:
+```js
 const getRealFloor = (n) => (n >= 13 ? n - 2 : n > 1 ? n - 1 : n === 1 ? 0 : n);
+```
 
-// Another good user solution:
-const getRealFloor = (n) => {
-  if (n >= 13) return n - 2;
-  if (n > 0) return n - 1;
-  return n;
-};
+**Python**
+
+```py
+def get_real_floor(n):
+    return n if n <= 0 else (n - 1 if n <= 12 else n - 2)
+```
