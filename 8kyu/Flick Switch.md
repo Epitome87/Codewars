@@ -38,3 +38,35 @@ const flickSwitch = (arr) => {
   }, []);
 };
 ```
+
+**Python**
+
+```py
+def flick_switch(lst):
+    result = []
+    flick = True
+    for item in lst:
+        if item == 'flick':
+            flick = not flick
+        result.append(flick)
+    return result
+```
+
+### User Solution
+
+**Python**
+
+```py
+def flick_switch(lst):
+    flick = True
+    return [ (flick := flick ^ (v == 'flick')) for v in lst]
+```
+
+## Takeaways
+
+1. Explanation of the user Python solution:
+
+   - flick is used as an alternating Boolean flag
+   - material within the brackets is a list comprehension
+   - := is the walrus operator, reassigning flick at each iteration
+   - ^ is a bitwise operator reversing the parity of the flag when the element == 'flick'
