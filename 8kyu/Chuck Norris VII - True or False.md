@@ -12,6 +12,15 @@ Go show some truth who's boss!
 
 ## My solution
 
+**JavaScript**
+
 ```js
 const ifChuckSaysSo = () => 'You' > 'chuck';
+```
+
+**Python**
+
+```py
+def if_chuck_says_so():
+    return 0
 ```
