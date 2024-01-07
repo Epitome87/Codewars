@@ -17,3 +17,17 @@ P.S. You have to create a new list and add a new item to that. (This Kata is ori
 ```js
 const addExtra = (arr) => [...arr, 69];
 ```
+
+**Python**
+
+```py
+def add_extra(list_of_numbers):
+    return list_of_numbers + [69]
+```
+
+```py
+def add_extra(list_of_numbers):
+    new_list = list_of_numbers.copy()
+    new_list.append(69)
+    return new_list
+```
