@@ -27,3 +27,19 @@ const doubleChar = (str) => [...str].map((c) => c + c).join('');
 ```js
 const doubleChar = (str) => [...str].reduce((acc, curr) => acc + curr.repeat(2), '');
 ```
+
+**Python**
+
+```py
+def double_char(s):
+    return ''.join([c * 2 for c in s])
+```
+
+### User Solution
+
+**Python**
+
+```py
+def double_char(s):
+    return ''.join(c * 2 for c in s)
+```
