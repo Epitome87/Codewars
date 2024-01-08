@@ -21,6 +21,10 @@ The function should return result of numbers after applying the chosen operation
 **JavaScript**
 
 ```js
+const basicOp = (op, v1, v2) => ({ '+': v1 + v2, '-': v1 - v2, '*': v1 * v2, '/': v1 / v2 }[op]);
+```
+
+```js
 const basicOp = (operation, value1, value2) => {
   switch (operation) {
     case '+':
@@ -34,6 +38,8 @@ const basicOp = (operation, value1, value2) => {
   }
 };
 ```
+
+**TypeScript**
 
 ```ts
 export const basicOp = (operation: '+' | '-' | '*' | '/', value1: number, value2: number): number => {
@@ -50,6 +56,44 @@ export const basicOp = (operation: '+' | '-' | '*' | '/', value1: number, value2
 };
 ```
 
+**Python**
+
+```py
+def basic_op(operator, value1, value2):
+    ops = {
+        '+': value1 + value2,
+        '-': value1 - value2,
+        '*': value1 * value2,
+        '/': value1 / value2
+    }
+    return ops[operator]
+```
+
+```py
+def basic_op(operator, value1, value2):
+    match operator:
+        case '+':
+            return value1 + value2
+        case '-':
+            return value1 - value2
+        case '*':
+            return value1 * value2
+        case '/':
+            return value1 / value2
+```
+
+```py
+def basic_op(operator, value1, value2):
+    if operator == "+":
+        return value1 + value2
+    if operator == "-":
+        return value1 - value2
+    if operator == "*":
+        return value1 * value2
+    if operator == "/":
+        return value1 / value2
+```
+
 ### User Solution
 
 **JavaScript**
@@ -57,18 +101,6 @@ export const basicOp = (operation: '+' | '-' | '*' | '/', value1: number, value2
 ```js
 function basicOp(operation, value1, value2) {
   return eval(value1 + operation + value2);
-}
-```
-
-```js
-function basicOp(operation, value1, value2) {
-var cases = {
-'+': value1 + value2,
-'-': value1 - value2,
-'_': value1 _ value2,
-'/': value1 / value2,
-};
-return cases[operation];
 }
 ```
 
@@ -85,6 +117,13 @@ export const basicOp = (operation: keyof typeof ops, value1: number, value2: num
   ops[operation](value1, value2);
 ```
 
+**Python**
+
+```py
+def basic_op(operator, value1, value2):
+    return eval(f'{value1}{operator}{value2}')
+```
+
 ## Takeaways
 
-1. Look into the eval function, but realize that it is highly frowned upon
+1. Look into the `eval` function, but realize that it is highly frowned upon!
