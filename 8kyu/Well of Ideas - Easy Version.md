@@ -25,11 +25,21 @@ const well = (x) => {
 };
 ```
 
-### User Solution
+**Python**
 
-**JavaScript**
+```py
+def well(x):
+    good_count = x.count("good")
+    return "I smell a series!" if good_count > 2 else "Publish!" if good_count > 0 else "Fail!"
+```
 
-```js
-const well = (x) =>
-  x.includes('good') ? (x.filter((s) => s == 'good').length < 3 ? 'Publish!' : 'I smell a series!') : 'Fail!';
+```py
+def well(x):
+    good_count = x.count('good')
+    if good_count > 2:
+        return "I smell a series!"
+    elif good_count > 0:
+        return "Publish!"
+    else:
+        return "Fail!"
 ```
