@@ -73,3 +73,43 @@ const greet = (language) => greetings[language] || greetings.english;
 ```js
 const greet = (language) => (greetings[language] ? greetings[language] : 'Welcome');
 ```
+
+**Python**
+
+```py
+languages = { "english": "Welcome",
+    "czech": "Vitejte",
+    "danish": "Velkomst",
+    "dutch": "Welkom",
+    "estonian": "Tere tulemast",
+    "finnish": "Tervetuloa",
+    "flemish": "Welgekomen",
+    "french": "Bienvenue",
+    "german": "Willkommen",
+    "irish": "Failte",
+    "italian": "Benvenuto",
+    "latvian": "Gaidits",
+    "lithuanian": "Laukiamas",
+    "polish": "Witamy",
+    "spanish": "Bienvenido",
+    "swedish": "Valkommen",
+    "welsh": "Croeso"
+}
+
+def greet(language):
+    try: return languages[language]
+    except KeyError: return languages["english"]
+```
+
+### User Solution
+
+**Python**
+
+```py
+def greet(language):
+    return welcome_message.get(language, welcome_message['english'])
+```
+
+## Takeaways
+
+1. Probably prefer using the `get(keyname, value)` method on Python dictionaries. It ensures a default value is returned if the key is not found (and thus avoids `KeyError`)!
