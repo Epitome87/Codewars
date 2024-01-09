@@ -21,16 +21,10 @@ If the array is empty or the array has only one element the result should be 0 (
 **JavaScript**
 
 ```js
-// My second-attempt solution:
-const sumOfDifferences = (arr) => {
-  if (!arr || arr.length < 2) return 0;
-  const sorted = [...arr].sort((a, b) => b - a);
-  return sorted[0] - sorted[sorted.length - 1];
-};
+const sumOfDifferences = (arr) => arr.length && Math.max(...arr) - Math.min(...arr);
 ```
 
 ```js
-// My first-solution:
 const sumOfDifferences = (arr) => {
   if (arr.length <= 1) return 0;
 
@@ -51,25 +45,14 @@ export const sumOfDifferences = (arr: number[]): number => {
 };
 ```
 
+**Python**
+
+```py
+def sum_of_differences(arr):
+    return len(arr) and max(arr) - min(arr)
+```
+
 ### User Solution
-
-**JavaScript**
-
-```js
-// Very clever user solution:
-function sumOfDifferences(arr) {
-  return arr.length > 1 ? Math.max(...arr) - Math.min(...arr) : 0;
-}
-```
-
-```js
-// Good user solution, similar to mine:
-const sumOfDifferences = (arr) =>
-  arr
-    .sort((a, b) => b - a)
-    .map((a, i) => a - arr[i + 1] || 0)
-    .reduce((a, b) => a + b, 0);
-```
 
 **TypeScript**
 
