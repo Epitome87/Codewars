@@ -23,7 +23,7 @@ You can assume, that the input string has always non-zero length.
 **JavaScript**
 
 ```js
-const firstNonRepeated = (s) => [...s].filter((el) => s.indexOf(el) === s.lastIndexOf(el))[0] || null;
+const firstNonRepeated = (s) => [...s].find((c) => s.indexOf(c) === s.lastIndexOf(c)) || null;
 ```
 
 ```js
@@ -36,22 +36,21 @@ const firstNonRepeated = (s) => {
 };
 ```
 
-```js
-const firstNonRepeated = (s) => {
-  if ([...s].every((char) => s.indexOf(char) === s.lastIndexOf(char))) return s[0];
-  for (let char of s) {
-    if (s.indexOf(char) === s.lastIndexOf(char)) return char;
-  }
-  return null;
-};
+**Python**
+
+```py
+def first_non_repeated(s):
+    for c in s:
+        if s.index(c) == s.rindex(c):
+            return c;
 ```
 
 ### User Solution
 
-**JavaScript**
-
-```js
-const firstNonRepeated = (s) => [...s].find((i) => s.indexOf(i) == s.lastIndexOf(i)) || null;
+```py
+def first_non_repeated(s):
+    for c in s:
+        if s.count(c) == 1: return c
 ```
 
 ## Takeaways:
