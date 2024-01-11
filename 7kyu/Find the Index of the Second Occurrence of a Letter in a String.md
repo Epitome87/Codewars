@@ -11,11 +11,13 @@ secondSymbol('Hello world!!!','l')  --> 3
 secondSymbol('Hello world!!!', 'A') --> -1
 ```
 
-Good luck ;) And don't forget to rate this Kata if you liked it.
-
 ## My Solution
 
 **JavaScript**
+
+```js
+const secondSymbol = (s, symbol) => s.indexOf(symbol, s.indexOf(symbol) + 1);
+```
 
 ```js
 const secondSymbol = (s, symbol) => {
@@ -28,16 +30,13 @@ const secondSymbol = (s, symbol) => {
 };
 ```
 
-### User Solution
+**Python**
 
-**JavaScript**
-
-```js
-function secondSymbol(s, symbol) {
-  return s.indexOf(symbol, s.indexOf(symbol) + 1);
-}
+```py
+def second_symbol(s, symbol):
+    return s.find(symbol, s.find(symbol) + 1)
 ```
 
 ## Takeaways
 
-1. Remember, `indexOf()` also accepts a starting index!
+1. Prefer `find()` over `index()`, as it is better at avoiding exceptions when an item is not found.
