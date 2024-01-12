@@ -15,6 +15,11 @@ Since Nessie is a master of disguise, the only way accurately tell is to look fo
 **JavaScript**
 
 ```js
+// Passes test, but will match "tree fifty" and "three fiddy", which isn't technically valid!
+const isLockNessMonster = (s) => /th?ree fi(ft|dd)y|3.50/.test(s);
+```
+
+```js
 const isLockNessMonster = (s) => /tree fiddy|three fifty|3.50/.test(s);
 ```
 
@@ -22,12 +27,11 @@ const isLockNessMonster = (s) => /tree fiddy|three fifty|3.50/.test(s);
 const isLockNessMonster = (s) => s.includes('three fifty') || s.includes('tree fiddy') || s.includes('3.50');
 ```
 
-### User Solution
+**Python**
 
-**JavaScript**
+```py
+import re
 
-```js
-function isLockNessMonster(s) {
-  return /3\.50|th?ree fi(?:ft|dd)y/g.test(s);
-}
+def is_lock_ness_monster(string):
+    return re.search("three fifty|tree fiddy|3\.50", string) != None
 ```
