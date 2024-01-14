@@ -29,3 +29,22 @@ removeChars("0123456789(.)+,|[]{}=@/~;^$'<>?-!*&:#%_")  ==> '' (empty string)
 ```js
 const removeChars = (s) => s.replace(/[^a-z ]/gi, '');
 ```
+
+**Python**
+
+```py
+import re
+
+def remove_chars(s):
+    return re.sub(r"[^a-zA-Z ]", "", s)
+```
+
+### User Solution
+
+**Python**
+
+```py
+# Clever, but not Regex
+def remove_chars(s):
+    return ''.join(c for c in s if c.isalpha() or c.isspace())
+```
