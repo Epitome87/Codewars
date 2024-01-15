@@ -21,12 +21,17 @@ String.prototype.whitespace = function () {
 };
 ```
 
-### User Solution
+**Python**
 
-**JavaScript**
+```py
+import re
 
-```js
-String.prototype.whitespace = function () {
-  return !/\S/.test(this);
-};
+def whitespace(string):
+    return re.fullmatch(r"\s*", string) != None
+```
+
+```py
+# Not using Regex
+def whitespace(string):
+    return not string.strip()
 ```
