@@ -24,10 +24,20 @@ const removeBMW = (str) =>
   typeof str !== 'string' ? new Error('This program only works for text.') : str.replace(/[bmw]/gi, '');
 ```
 
-### User Solution
+**Python**
 
-**JavaScript**
+```py
+import re
 
-```js
+def remove_bmw(string):
+    return re.sub("[bmw]", "", string, 0, re.I) if isinstance(string, str) else "This program only works for text."
+```
 
+```py
+# Not using Regex
+def remove_bmw(string):
+    if isinstance(string, str):
+        return "".join(c for c in string if c not in 'bmwBMW')
+    else:
+        return "This program only works for text."
 ```
