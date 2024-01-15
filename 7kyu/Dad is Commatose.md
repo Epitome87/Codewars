@@ -14,10 +14,28 @@ Write a function called dadFilter that takes a string as argument and returns a 
 const dadFilter = (str) => str.trim().replace(/,{2,}/g, ',').replace(/,$/g, '');
 ```
 
+**Python**
+
+```py
+# The regex used in the JS solution seems to add spaces to the end of the Python string!
+import re
+
+def dad_filter(string):
+    return re.sub(r",(?=,)|,\s*$", "", string).strip()
+```
+
 ### User Solution
 
 **JavaScript**
 
 ```js
 const dadFilter = (str) => str.replace(/,(?=,)|,\s*$/g, '');
+```
+
+**Python**
+
+```py
+import re
+def dad_filter(string):
+    return re.sub(',+', ',', string).rstrip(', ')
 ```
