@@ -17,6 +17,15 @@ Create a function that takes any sentence and redistributes the spaces (and adds
 **JavaScript**
 
 ```js
+const vowelStart = (str) =>
+  str
+    .toLowerCase()
+    .replace(/[\W_]/g, '')
+    .replace(/[aeiou]/g, ' $&')
+    .trim();
+```
+
+```js
 const vowelStart = (str) => (
   (str = str.replace(/ /g, '').toLowerCase()),
   [...str.slice(1)].reduce(
@@ -28,38 +37,33 @@ const vowelStart = (str) => (
 
 ```js
 function vowelStart(str) {
-  let str = str.replace(/ /g, '').toLowerCase();
+  str = str.replace(/ /g, '').toLowerCase();
   let result = str.slice(0, 1);
 
   for (let char of str.slice(1)) {
     const isValid = /[a-z0-9]/.test(char);
-    if ('aeiou'.includes(char) && isValid) result += ' ' + char;
+    if ('aeiou'.includes(char)) result += ' ' + char;
     else if (isValid) result += char;
   }
   return result;
 }
 ```
 
-### User Solution
+**Python**
 
-**JavaScript**
+```py
+import re
 
-```js
-function vowelStart(str) {
-  return str
-    .toLowerCase()
-    .replace(/[^a-z\d]/g, '')
-    .replace(/[aeiou]/g, ' $&')
-    .trim();
-}
+def vowel_start(st):
+    return re.sub("[aeiou]", lambda m: f" {m[0]}", re.sub("[\W_]", "", st.lower())).strip()
 ```
 
-```js
-function vowelStart(str) {
-  return str
-    .replace(/\W|_/g, '')
-    .toLowerCase()
-    .replace(/[aeiou]/g, (s) => ` ${s}`)
-    .trim();
-}
+### User Solution
+
+**Python**
+
+```py
+from re import sub
+def vowel_start(st):
+    return sub(r'(?<=.)([aeiou])', r' \1', sub(r'[^a-z0-9]', '', st.lower()))
 ```
