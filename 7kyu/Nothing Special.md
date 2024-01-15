@@ -14,10 +14,13 @@ Create a function that given a string, retains only the letters A-Z (upper and l
 const nothingSpecial = (str) => (typeof str === 'string' ? str.replace(/[^a-z0-9\s]/gi, '') : 'Not a string!');
 ```
 
-### User Solution
+**Python**
 
-**JavaScript**
+```py
+import re
 
-```js
+def nothing_special(s):
+    return re.sub("[^a-z0-9\s]", "", s, flags=re.I) if isinstance(s, str) else 'Not a string!'
 
+# Can also simplify the type check with: type(s) === str
 ```
