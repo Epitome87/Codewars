@@ -20,14 +20,20 @@ const wdm = (talk) =>
     .trim();
 ```
 
+**Python**
+
+```py
+import re
+
+def wdm(talk):
+    return re.sub(r"\s+", " ", re.sub(r"hiccup|puke", "", talk)).strip()
+```
+
 ### User Solution
 
-**JavaScript**
+**Python**
 
-```js
-const wdm = (talk) =>
-  talk
-    .replace(/puke|hiccup/g, ``)
-    .trim()
-    .replace(/\s+/g, ` `);
+```py
+def wdm(talk):
+    return ' '.join(talk.replace('puke', '').replace('hiccup', '').split())
 ```
