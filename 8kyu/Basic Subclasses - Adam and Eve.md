@@ -35,3 +35,16 @@ export class Human {}
 export class Man extends Human {}
 export class Woman extends Human {}
 ```
+
+**Python**
+
+```py
+class Human: ...
+
+class Man(Human): ...
+
+class Woman(Human): ...
+
+def God():
+    return [Man(), Woman()]
+```
