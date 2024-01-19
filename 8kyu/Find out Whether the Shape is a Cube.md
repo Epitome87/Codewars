@@ -1,4 +1,4 @@
-# Find out Whether the Shape is a Cube
+# [Find out Whether the Shape is a Cube](https://www.codewars.com/kata/58d248c7012397a81800005c)
 
 ## Description
 
@@ -21,6 +21,10 @@ Note: the sides must be integers
 **JavaScript**
 
 ```js
+const cubeChecker = (volume, side) => side > 0 && side ** 3 === volume;
+```
+
+```js
 const cubeChecker = (volume, side) => (side <= 0 ? false : +Math.pow(volume, 1 / 3).toFixed(2) === side);
 ```
 
@@ -30,19 +34,14 @@ const cubeChecker = (volume, side) => (side <= 0 ? false : +Math.pow(volume, 1 /
 export const cubeChecker = (volume: number, side: number): boolean => volume / Math.pow(side, 3) === 1;
 ```
 
-### User Solution
+**Python**
 
-**JavaScript**
-
-```js
-var cubeChecker = function (v, s) {
-  return s > 0 && v == s * s * s;
-};
-
-var cubeChecker = function (volume, side) {
-  return Math.pow(side, 3) === volume && side > 0;
-};
+```py
+def cube_checker(volume, side):
+    return side > 0 and side ** 3 == volume
 ```
+
+### User Solution
 
 **TypeScript**
 
@@ -50,6 +49,13 @@ var cubeChecker = function (volume, side) {
 export function cubeChecker(volume: number, side: number): boolean {
   return side ** 3 === volume && volume > 0;
 }
+```
+
+**Python**
+
+```py
+def cube_checker(volume, side):
+    return 0 < volume == side ** 3
 ```
 
 ## Takeaways
