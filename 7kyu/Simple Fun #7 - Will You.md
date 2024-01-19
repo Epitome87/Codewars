@@ -25,7 +25,7 @@ For young = true, beautiful = false and loved = true, the output should be true.
 
 Mary doesn't believe that not beautiful people can be loved.
 
-**Input/Output**
+**Input/Output** all
 
 - [input] boolean young
 - [input] boolean beautiful
@@ -39,18 +39,23 @@ true if the person contradicts Mary's belief, false otherwise.
 **JavaScript**
 
 ```js
+const willYou = (young, beautiful, loved) => (young && beautiful) !== loved;
+```
+
+```js
 const willYou = (young, beautiful, loved) => (young && beautiful && !loved) || (!(young && beautiful) && loved);
+```
+
+**Python**
+
+```py
+def will_you(young, beautiful, loved):
+    return (young and beautiful) != loved
 ```
 
 ### User Solution
 
 **JavaScript**
-
-```js
-function willYou(young, beautiful, loved) {
-  return (young && beautiful) !== loved;
-}
-```
 
 ```js
 let willYou = (young, beautiful, loved) => (young && beautiful ? !loved : loved);
