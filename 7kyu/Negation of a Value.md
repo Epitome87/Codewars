@@ -26,7 +26,18 @@ Note: Always return a boolean value, even if there're no negations.
 **JavaScript**
 
 ```js
+const negationValue = (string, value) => (string.length % 2 ? !value : !!value);
+```
+
+```js
 const negationValue = (string, value) => [...string].reduce((acc, _) => !acc, value);
+```
+
+**Python**
+
+```py
+def negation_value(s, val):
+    return not bool(val) if len(s) % 2 else bool(val)
 ```
 
 ### User Solution
@@ -37,8 +48,14 @@ const negationValue = (string, value) => [...string].reduce((acc, _) => !acc, va
 const negationValue = (string, value) => string.length % 2 == !value;
 ```
 
-```js
-function negationValue(string, value) {
-  return string.length % 2 ? !value : !!value;
-}
+**Python**
+
+```py
+def negation_value(s, x):
+    return len(s) % 2 ^ bool(x)
+```
+
+```py
+def negation_value(str, val):
+  return bool(not val if len(str) % 2 else val)
 ```
