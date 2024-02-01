@@ -23,17 +23,13 @@ There may be multiple fridges, and multiple pillows. But you need at least 1 pil
 **JavaScript**
 
 ```js
+const pillow = (arr) => [...arr[0]].some((v, i) => v === 'n' && arr[1][i] === 'B');
+```
+
+```js
 const pillow = (arr) => {
   const fridgeIndices = [...arr[0]].reduce((acc, cur, idx) => (cur === 'n' ? [...acc, idx] : acc), []);
   const pillowIndices = [...arr[1]].reduce((acc, cur, idx) => (cur === 'B' ? [...acc, idx] : acc), []);
   return fridgeIndices.some((fridgeIndex) => pillowIndices.some((pillowIndex) => fridgeIndex === pillowIndex));
 };
-```
-
-### User Solution
-
-**JavaScript**
-
-```js
-const pillow = (s) => [...s[0]].some((val, idx) => val === `n` && s[1][idx] === `B`);
 ```
