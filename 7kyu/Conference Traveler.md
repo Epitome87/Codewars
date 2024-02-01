@@ -33,23 +33,15 @@ conferencePicker(citiesVisited, citiesOffered);
 **JavaScript**
 
 ```js
+const conferencePicker = (citiesVisited, citiesOffered) =>
+  citiesOffered.find((city) => !citiesVisited.includes(city)) || 'No worthwhile conferences this year!';
+```
+
+```js
 const conferencePicker = (citiesVisited, citiesOffered) => {
   for (let city of citiesOffered) {
     if (!citiesVisited.includes(city)) return city;
   }
   return 'No worthwhile conferences this year!';
 };
-```
-
-### User Solution
-
-**JavaScript**
-
-```js
-const conferencePicker = (citiesVisited, citiesOffered) =>
-  citiesOffered.find((val) => !citiesVisited.includes(val)) || `No worthwhile conferences this year!`;
-```
-
-```js
-const conferencePicker = (cV, cO) => cO.filter((x) => !cV.includes(x))[0] || 'No worthwhile conferences this year!';
 ```
