@@ -20,24 +20,22 @@ For example: (Input --> Output)
 
 ```js
 const camelize = (str) =>
+  (str.match(/[a-z0-9]+/gi) || []).map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase()).join('');
+```
+
+```js
+const camelize = (str) =>
+  str
+    .split(/[^a-z0-9]/gi)
+    .map((v) => v.slice(0, 1).toUpperCase() + v.slice(1).toLowerCase())
+    .join('');
+```
+
+```js
+const camelize = (str) =>
   str
     .replace(/[^a-z0-9]/gi, ' ')
     .split(' ')
     .map((c) => c.slice(0, 1).toUpperCase() + c.slice(1).toLowerCase())
     .join('');
-```
-
-### User Solution
-
-**JavaScript**
-
-```js
-function camelize(str) {
-  return str
-    .match(/[a-z0-9]+/gi)
-    .map(function (word) {
-      return word[0].toUpperCase() + word.slice(1).toLowerCase();
-    })
-    .join('');
-}
 ```
