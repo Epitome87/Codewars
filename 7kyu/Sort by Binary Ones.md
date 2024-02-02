@@ -28,6 +28,16 @@ const sortByBinaryOnes = (list) =>
 
 ```js
 const sortByBinaryOnes = (list) => {
+  return [...list].sort((a, b) => {
+    const numOnesA = a.toString(2).split('1').length;
+    const numOnesB = b.toString(2).split('1').length;
+    return numOnesA === numOnesB ? a - b : numOnesB - numOnesA;
+  });
+};
+```
+
+```js
+const sortByBinaryOnes = (list) => {
   const sorted = [...list].sort((a, b) => {
     const binaryA = a.toString(2);
     const binaryB = b.toString(2);
@@ -44,15 +54,6 @@ const sortByBinaryOnes = (list) => {
 
   return sorted;
 };
-```
-
-### User Solution
-
-**JavaScript**
-
-```js
-const sortByBinaryOnes = (list) =>
-  list.sort((a, b) => b.toString(2).replace(/0/g, ``).length - a.toString(2).replace(/0/g, ``).length || a - b);
 ```
 
 ### Takeaways
