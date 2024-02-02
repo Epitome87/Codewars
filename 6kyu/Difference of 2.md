@@ -12,17 +12,29 @@ Assume there are no duplicate integers in the array. The order of the integers i
 
 ```
 [1, 2, 3, 4]  should return [[1, 3], [2, 4]]
-
 [4, 1, 2, 3]  should also return [[1, 3], [2, 4]]
-
 [1, 23, 3, 4, 7] should return [[1, 3]]
-
 [4, 3, 1, 5, 6] should return [[1, 3], [3, 5], [4, 6]]
 ```
 
 ## My Solution
 
 **JavaScript**
+
+```js
+const twosDifference = (nums) =>
+  [...nums]
+    .sort((a, b) => a - b)
+    .filter((v) => nums.includes(v + 2))
+    .map((v) => [v, v + 2]);
+```
+
+```js
+const twosDifference = (nums) =>
+  [...nums]
+    .sort((a, b) => a - b)
+    .reduce((acc, cur, _, arr) => (arr.includes(cur + 2) ? [...acc, [cur, cur + 2]] : acc), []);
+```
 
 ```js
 const twosDifference = (input) => {
@@ -39,24 +51,4 @@ const twosDifference = (input) => {
 
   return result;
 };
-```
-
-
-### User Solution
-
-**JavaScript**
-
-```js
-function twosDifference(input){
-  return input
-   .sort(function(a, b){
-     return a - b
-   })
-   .filter(function(a){
-     return input.indexOf(a+2) != -1
-   })
-   .map(function(a){
-     return [a, a+2]
-   })
-}
 ```
