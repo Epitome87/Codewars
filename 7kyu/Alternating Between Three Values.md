@@ -23,15 +23,14 @@ What is the most efficient way to cycle among three values? Write a function f s
 **JavaScript**
 
 ```js
-const f = (x, values) => {
-  const key = Object.entries(values).reduce((acc, [k, val]) => (val === x ? k : acc), null);
-  return values[key === 'a' ? 'b' : key === 'b' ? 'c' : 'a'];
-};
+function f(x, cc) {
+  return cc.a === x ? cc.b : cc.b === x ? cc.c : cc.a;
+}
 ```
 
-### User Solution
-
-**JavaScript**
+```js
+const f = (x, { a, b, c }) => ({ [a]: b, [b]: c, [c]: a }[x]);
+```
 
 ```js
 function f(x, cc) {
@@ -46,12 +45,14 @@ function f(x, cc) {
 }
 ```
 
-```js
-const f = (x, { a, b, c }) => ({ [a]: b, [b]: c, [c]: a }[x]);
+**Python**
+
+```py
+def f(x, a, b, c):
+  return { a: b, b: c, c: a}[x]
 ```
 
-```js
-function f(x, cc) {
-  return cc.a === x ? cc.b : cc.b === x ? cc.c : cc.a;
-}
+```py
+def f(x, a, b, c):
+    return b if x == a else c if x == b else a;
 ```
