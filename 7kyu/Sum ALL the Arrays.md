@@ -13,6 +13,10 @@ Ignore all other types of values.
 **JavaScript**
 
 ```js
+const arraySum = (arr) => `${arr}`.split(',').reduce((acc, cur) => acc + (+cur || 0), 0);
+```
+
+```js
 const arraySum = (arr) =>
   arr.flat(Number.MAX_VALUE).reduce((sum, curr) => sum + (typeof curr === 'number' ? curr : 0), 0);
 ```
@@ -20,12 +24,6 @@ const arraySum = (arr) =>
 ### User Solution
 
 **JavaScript**
-
-```js
-function arraySum(arr) {
-  return (arr + '').split(',').reduce((s, cv) => s + (+cv || 0), 0);
-}
-```
 
 ```js
 function arraySum(arr) {
