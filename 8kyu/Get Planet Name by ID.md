@@ -1,14 +1,23 @@
-/*
+# [Get Planet Name by ID](https://www.codewars.com/kata/515e188a311df01cba000003)
+
+## Description
+
 The function is not returning the correct values. Can you figure out why?
 
-Example (Input --> Output ):
+Example (Input --> Output):
 
+```
 3 --> "Earth"
-*/
+```
 
-// My solution:
+## My Solution
+
+**JavaScript**
+
+```js
 function getPlanetName(id) {
-  let name;
+  let name = '';
+
   switch (id) {
     case 1:
       name = 'Mercury';
@@ -37,8 +46,9 @@ function getPlanetName(id) {
 
   return name;
 }
+```
 
-// Clever user solution (though we were given the switch statement to modify, so this disregards that):
+```js
 function getPlanetName(id) {
   return {
     1: 'Mercury',
@@ -51,3 +61,21 @@ function getPlanetName(id) {
     8: 'Neptune',
   }[id];
 }
+```
+
+**Python**
+
+```py
+def get_planet_name(id):
+    name = ""
+    match id:
+        case 1: name = "Mercury"
+        case 2: name = "Venus"
+        case 3: name = "Earth"
+        case 4: name = "Mars"
+        case 5: name = "Jupiter"
+        case 6: name = "Saturn"
+        case 7: name = "Uranus"
+        case 8: name = "Neptune"
+    return name
+```
