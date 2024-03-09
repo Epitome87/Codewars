@@ -1,4 +1,7 @@
-/*
+# [English Beggars](https://www.codewars.com/kata/59590976838112bfea0000fa)
+
+## Description
+
 Born a misinterpretation of this kata, your task here is pretty simple: given an array of values and an amount of beggars, you are supposed to return an array with the sum of what each beggar brings home, assuming they all take regular turns, from the first to the last.
 
 For example: [1,2,3,4,5] for 2 beggars will return a result of [9,6], as the first one takes [1,3,5], the second collects [2,4].
@@ -10,9 +13,16 @@ Also note that not all beggars have to take the same amount of "offers", meaning
 Note: in case you don't get why this kata is about English beggars, then you are not familiar on how religiously queues are taken in the kingdom ;)
 
 Note 2: do not modify the input array.
-*/
 
-// My solution:
+## My Solution
+
+**JavaScript**
+
+```js
+const beggars = (values, n) => values.reduce((acc, cur, idx) => ((acc[idx % n] += values[idx]), acc), Array(n).fill(0));
+```
+
+```js
 const beggars = (values, n) => {
   const res = Array(n).fill(0);
 
@@ -22,16 +32,27 @@ const beggars = (values, n) => {
 
   return res;
 };
+```
 
-// Clever user solution:
-const beggars = (vals, n) =>
-  vals.reduce((a, v, x) => {
-    a[x % n] += v;
-    return a;
-  }, Array(n).fill(0));
+**Python**
 
-/* Takeaways:
-1) I was approaching the 'clever' user's solution in my refactored solution, but
-I was unsure how to reduce to an output that's an array where each index can be modified out of order.
-Use this Kata as a guideline on how to achieve this, as it is quite common!
-*/
+```py
+def beggars(values, n):
+    if n == 0:
+        return []
+
+    result = [0] * n
+    for i, val in enumerate(values):
+        result[0 if n == 0 else i % n] += values[i]
+
+    return result
+```
+
+### User Solution
+
+**Python**
+
+```py
+def beggars(values, n):
+    return [sum(values[i::n]) for i in range(n)]
+```
