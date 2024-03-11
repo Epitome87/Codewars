@@ -1,5 +1,9 @@
-/*
-Task
+# [zipWith](https://www.codewars.com/kata/5825792ada030e9601000782)
+
+## Description
+
+**Task**
+
 zipWith ( or zip_with ) takes a function and two arrays and zips the arrays together, applying the function to every pair of values.
 The function value is one new array.
 
@@ -8,7 +12,9 @@ If the arrays are of unequal length, the output will only be as long as the shor
 
 Inputs should not be modified.
 
-Examples
+**Examples**
+
+```
 zipWith( Math.pow, [10,10,10,10], [0,1,2,3] )      =>  [1,10,100,1000]
 zipWith( Math.max, [1,4,7,1,4,7], [4,7,1,4,7,1] )  =>  [4,7,7,4,7,7]
 
@@ -16,14 +22,29 @@ zipWith( function(a,b) { return a+b; }, [0,1,2,3], [0,1,2,3] )  =>  [0,2,4,6]  /
 zipWith( (a,b) => a+b,                  [0,1,2,3], [0,1,2,3] )  =>  [0,2,4,6]  // Both are functions
 Input validation
 Assume all input is valid.
-*/
+```
 
-// My solution:
-const zipWith = (fn, a0, a1) =>
-  Array.from({ length: Math.min(a0.length, a1.length) }, (_, idx) =>
-    fn(a0[idx], a1[idx])
-  );
+## My Solution
 
-// My favorite user solution:
+**JavaScript**
+
+```js
 const zipWith = (fn, a0, a1) =>
-  a0.slice(0, a1.length).map((val, idx) => fn(val, a1[idx]));
+  Array.from({ length: Math.min(a0.length, a1.length) }, (_, idx) => fn(a0[idx], a1[idx]));
+```
+
+**Python**
+
+```py
+def zip_with(fn,a1,a2):
+    return [fn(x, a2[i]) for i, x in enumerate(a1[:len(a2)])]
+```
+
+### User Solution
+
+**Python**
+
+```py
+def zip_with(fn, a1, a2):
+    return list(map(fn, a1, a2))
+```
