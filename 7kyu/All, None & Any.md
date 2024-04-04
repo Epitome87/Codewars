@@ -1,22 +1,28 @@
-/*
+# [All, None & Any](https://www.codewars.com/kata/54589f3b52756d34d6000158)
+
+## Description
+
 As a part of this Kata, you need to create three functions that one needs to be able to call upon an array:
 
-all
+1. **all**
 
 This function returns true only if the predicate supplied returns true for all the items in the array [1, 2, 3].all(isGreaterThanZero) => true [-1, 0, 2].all(isGreaterThanZero) => false
 
-none
+2. **none**
 
 This function returns true only if the predicate supplied returns false for all the items in the array [-1, 2, 3].none(isLessThanZero) => false [-1, -2, -3].none(isGreaterThanZero) => true
 
-any
+3. **any**
 
 This function returns true if at least one of the items in the array returns true for the predicate supplied [-1, 2, 3].any(isGreaterThanZero) => true [-1, -2, -3].any(isGreaterThanZero) => false
 
 You do not need to worry about the data supplied, it will be an array at all times.
-*/
 
-// My solution:
+## My Solution
+
+**JavaScript**
+
+```js
 Array.prototype.all = function (p) {
   for (const el of this) {
     if (!p(el)) return false;
@@ -37,8 +43,13 @@ Array.prototype.any = function (p) {
   }
   return false;
 };
+```
 
-// Clever user solution:
+### User Solution
+
+**JavaScript**
+
+```js
 Array.prototype.all = function (p) {
   return this.filter(p).length == this.length;
 };
@@ -50,8 +61,9 @@ Array.prototype.none = function (p) {
 Array.prototype.any = function (p) {
   return this.filter(p).length > 0;
 };
+```
 
-// Another clever user solution:
+```js
 Array.prototype.all = function (p) {
   return this.reduce((res, i) => res && p(i), true);
 };
@@ -63,3 +75,4 @@ Array.prototype.none = function (p) {
 Array.prototype.any = function (p) {
   return this.reduce((res, i) => res || p(i), false);
 };
+```
