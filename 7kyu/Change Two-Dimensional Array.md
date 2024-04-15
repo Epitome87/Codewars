@@ -41,7 +41,7 @@ const matrix = (arr) => arr.map((el, i) => ((el[i] = +(el[i] >= 0)), el));
 ```
 
 ```js
-const matrix = (arr) => arr.reduce((acc, curr, i) => ((curr[i] = +(curr[i] >= 0)), acc), arr);
+const matrix = (arr) => arr.reduce((acc, cur, i) => ((cur[i] = +(cur[i] >= 0)), acc), arr);
 ```
 
 ```js
@@ -52,4 +52,13 @@ const matrix = (array) => {
   }
   return result;
 };
+```
+
+**Python**
+
+```py
+def matrix(array):
+    for i in range(len(array)):
+        array[i][i] = array[i][i] >= 0
+    return array
 ```
