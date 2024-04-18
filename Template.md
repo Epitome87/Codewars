@@ -10,10 +10,22 @@
 
 ```
 
+**Python**
+
+```py
+
+```
+
 ### User Solution
 
 **JavaScript**
 
 ```js
+
+```
+
+**Python**
+
+```py
 
 ```
