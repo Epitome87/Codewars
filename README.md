@@ -26,9 +26,12 @@ View solutions by clicking the corresponding difficulty badges below:
       <td><a href="./7kyu/"><img src="https://img.shields.io/github/directory-file-count/Epitome87/Codewars%2F7kyu?style=for-the-badge&logo=github&label=7kyu&color=white"></a></td>
       <td><a href="./6kyu/"><img src="https://img.shields.io/github/directory-file-count/Epitome87/Codewars%2F6kyu?style=for-the-badge&logo=github&label=6kyu&color=yellow"></a></td>
       <td><a href="./5kyu/"><img src="https://img.shields.io/github/directory-file-count/Epitome87/Codewars%2F5kyu?style=for-the-badge&logo=github&label=5kyu&color=yellow"></a></td>
+    </tr>
+    <tr>
       <td><a href="./4kyu/"><img src="https://img.shields.io/github/directory-file-count/Epitome87/Codewars%2F4kyu?style=for-the-badge&logo=github&label=4kyu&color=ECB613"></a></td>
       <td><a href="./3kyu/"><img src="https://img.shields.io/github/directory-file-count/Epitome87/Codewars%2F3kyu?style=for-the-badge&logo=github&label=3kyu&color=3C7EBB"></a></td>
       <td><a href="./2kyu/"><img src="https://img.shields.io/github/directory-file-count/Epitome87/Codewars%2F2kyu?style=for-the-badge&logo=github&label=2kyu&color=866CC7"></a></td>
+      <td><a href="./1kyu/"><img src="https://img.shields.io/github/directory-file-count/Epitome87/Codewars%2F1kyu?style=for-the-badge&logo=github&label=1kyu&color=866CC7"></a></td>
     </tr>
   </tbody>
 </table>
