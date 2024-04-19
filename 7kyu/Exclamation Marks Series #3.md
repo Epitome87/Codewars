@@ -20,10 +20,23 @@ remove('Hi') == 'Hi';
 **JavaScript**
 
 ```js
+const remove = (str) => str.replace(/!+(?=[^!])/g, '');
+```
+
+```js
 const remove = (str) => {
   const end = str.match(/!+$/g, '') || [];
   return str.slice(0, (-end).length).replace(/!/g, '') + end;
 };
+```
+
+**Python**
+
+```py
+import re
+
+def remove(s):
+    return re.sub(r"!+(?=[^!])", "", s)
 ```
 
 ### User Solution
@@ -40,11 +53,4 @@ function remove(s) {
 function remove(s) {
   return s.replace(/!+([^!])/g, '$1');
 }
-```
-
-```js
-const remove = (str) => {
-  const [head, tail = ''] = str.split(/(!+$)/);
-  return head.replace(/!/g, '') + tail;
-};
 ```
