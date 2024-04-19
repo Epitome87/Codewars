@@ -26,3 +26,23 @@ const splitAndMerge = (str, separator) =>
     .map((word) => [...word].join(separator))
     .join(' ');
 ```
+
+**Python**
+
+```py
+def split_and_merge(string, separator):
+    return " ".join(separator.join(char for char in word) for word in string.split())
+```
+
+### User Solution
+
+**Python**
+
+```py
+def split_and_merge(string, sp):
+    return ' '.join(sp.join(word) for word in string.split())
+```
+
+## Takeaways
+
+1. The `join` method in Python can directly accept a string; no need to turn it into a list first! The same cannot be said with the JavaScript equivalent.
