@@ -21,5 +21,12 @@ const sumTwoSmallestNumbers = (numbers) =>
   numbers
     .sort((a, b) => a - b)
     .slice(0, 2)
-    .reduce((acc, curr) => acc + curr, 0);
+    .reduce((acc, cur) => acc + cur, 0);
+```
+
+**Python**
+
+```py
+def sum_two_smallest_numbers(numbers):
+    return sum(sorted(numbers)[:2])
 ```
