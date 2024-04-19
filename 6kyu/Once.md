@@ -1,22 +1,31 @@
-/*
+# [Once](https://www.codewars.com/kata/5307ff5b588fe6d7000000a5)
+
+## Description
+
 You'll implement once, a function that takes another function as an argument, and returns a new version of that function that can only be called once.
 
 Subsequent calls to the resulting function should have no effect (and should return undefined).
 
 For example:
 
-logOnce = once(console.log)
-logOnce("foo") // -> "foo"
-logOnce("bar") // -> no effect
-*/
+```js
+logOnce = once(console.log);
+logOnce('foo'); // -> "foo"
+logOnce('bar'); // -> no effect
+```
 
-// My one-line solution (not best practice!):
+## My Solution
+
+**JavaScript**
+
+```js
 const once =
   (fn, callCount = 0) =>
   (...args) =>
     !callCount++ ? fn(...args) : undefined;
+```
 
-// My straight-forward solution:
+```js
 const once = (fn) => {
   let hasBeenCalled = false;
   return (...args) => {
@@ -26,8 +35,13 @@ const once = (fn) => {
     }
   };
 };
+```
 
-// Top user solution:
+### User Solution
+
+**JavaScript**
+
+```js
 function once(fn) {
   var call = true;
   return function () {
@@ -37,3 +51,4 @@ function once(fn) {
     }
   };
 }
+```
