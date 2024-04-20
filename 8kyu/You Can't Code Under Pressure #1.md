@@ -11,3 +11,10 @@ Code as fast as you can! You need to double the integer and return it.
 ```js
 const doubleInteger = (i) => 2 * i;
 ```
+
+**Python**
+
+```py
+def double_integer(i):
+    return i * 2
+```
