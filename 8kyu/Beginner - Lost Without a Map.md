@@ -6,7 +6,7 @@ Given an array of integers, return a new array with each value doubled.
 
 For example:
 
-[1, 2, 3] --> [2, 4, 6]
+`[1, 2, 3] `--> `[2, 4, 6]`
 
 ## My Solution
 
@@ -20,4 +20,11 @@ const maps = (x) => x.map((n) => n * 2);
 
 ```ts
 export const maps = (nums: number[]): number[] => nums.map((num) => num * 2);
+```
+
+**Python**
+
+```py
+def maps(a):
+    return [x * 2 for x in a]
 ```
