@@ -1,6 +1,6 @@
 # [Exes and Ohs](https://www.codewars.com/kata/55908aad6620c066bc00002a)
 
-## Description 
+## Description
 
 Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
 
@@ -19,6 +19,10 @@ XO("zzoo") => false
 **JavaScript**
 
 ```js
+const XO = (str) => str.split(/x/gi).length === str.split(/o/gi).length;
+```
+
+```js
 const XO = (str) => (str.match(/x/gi) || []).length === (str.match(/o/gi) || []).length;
 ```
 
@@ -31,4 +35,11 @@ const XO = (str) => {
 
   return numberOfX === numberOfO;
 };
+```
+
+**Python**
+
+```py
+def xo(s):
+    return s.lower().count('x') == s.lower().count('o')
 ```
