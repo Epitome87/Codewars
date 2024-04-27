@@ -18,6 +18,13 @@ Example:
 const splitSentence = (s) => s.split(' ');
 ```
 
+**Python**
+
+```py
+def splitSentence(s):
+    return s.split()
+```
+
 ### User Solution
 
 **JavaScript**
