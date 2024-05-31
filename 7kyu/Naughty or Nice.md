@@ -47,3 +47,26 @@ const naughtyOrNice = (data) => {
   return naughtyMeter < 0 ? 'Naughty!' : 'Nice!';
 };
 ```
+
+**Python**
+
+```py
+def naughty_or_nice(data):
+    naughter_meter = 0
+
+    for month in data:
+        for day in data[month]:
+            naughter_meter += 1 if data[month][day] == 'Nice' else -1
+
+    return 'Naughty!' if naughter_meter < 0 else 'Nice!'
+```
+
+### User Solution
+
+**Python**
+
+```py
+def naughty_or_nice(data):
+    s = str(data)
+    return 'Nice!' if s.count('Nice') >= s.count('Naughty') else 'Naughty!'
+```
