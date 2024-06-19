@@ -1,4 +1,7 @@
-/*
+# [Two Sum](https://www.codewars.com/kata/52c31f8e6605bcc646000082)
+
+## Description
+
 Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple / list (depending on your language) like so: (index1, index2).
 
 For the purposes of this kata, some tests may have multiple answers; any valid solutions will be accepted.
@@ -7,10 +10,28 @@ The input will always be valid (numbers will be an array of length 2 or greater,
 
 Based on: http://oj.leetcode.com/problems/two-sum/
 
-twoSum([1, 2, 3], 4) // returns [0, 2] or [2, 0]
-*/
+```js
+two_sum([1, 2, 3], 4) # returns (0, 2) or (2, 0)
+two_sum([3, 2, 4], 6) # returns (1, 2) or (2, 1)
+```
 
-// My eh brute-force solution:
+## My Solution
+
+**JavaScript**
+
+```js
+const twoSum = (numbers, target) => {
+  const seen = {};
+
+  for (let i = 0; i < numbers.length; i++) {
+    const need = target - numbers[i];
+    if (need in seen) return [i, seen[need]];
+    seen[numbers[i]] = i;
+  }
+};
+```
+
+```js
 function twoSum(numbers, target) {
   for (let i = 0; i < numbers.length - 1; i++) {
     for (let j = i + 1; j < numbers.length; j++) {
@@ -18,24 +39,17 @@ function twoSum(numbers, target) {
     }
   }
 }
+```
 
-// More efficient user solution:
-function twoSum(numbers, target) {
-  let seen = new Map();
-  for (let i = 0; i < numbers.length; i++) {
-    let x = numbers[i],
-      y = target - x;
-    if (seen.has(y)) return [seen.get(y), i];
-    seen.set(x, i);
-  }
-}
+**Python**
 
-// Clever user solution:
-function twoSum(numbers, target) {
-  for (i = 0; i < numbers.length; i++) {
-    second = numbers.indexOf(target - numbers[i], i + 1);
-    if (second > i) {
-      return [i, second];
-    }
-  }
-}
+```py
+def two_sum(numbers, target):
+    seen = {}
+
+    for i in range(len(numbers)):
+        complement = target - numbers[i]
+        if complement in seen:
+            return (i, seen[complement])
+        seen[numbers[i]] = i
+```

@@ -1,30 +1,57 @@
-/*
+# [The dropWhile Function](https://www.codewars.com/kata/54f9c37106098647f400080a)
+
+## Description
+
 Yet another staple for the functional programmer. You have a sequence of values and some predicate for those values. You want to remove the longest prefix of elements such that the predicate is true for each element. We'll call this the dropWhile function. It accepts two arguments. The first is the sequence of values, and the second is the predicate function. The function does not change the value of the original sequence.
 
+```js
 function isEven(num) {
   return num % 2 === 0;
 }
-var seq = [2,4,6,8,1,2,5,4,3,2];
+var seq = [2, 4, 6, 8, 1, 2, 5, 4, 3, 2];
 
-dropWhile(seq, isEven) // -> [1,2,5,4,3,2]
+dropWhile(seq, isEven); // -> [1,2,5,4,3,2]
+```
+
 Your task is to implement the dropWhile function. If you've got a span function lying around, this is a one-liner! Alternatively, if you have a takeWhile function on your hands, then combined with the dropWhile function, you can implement the span function in one line. This is the beauty of functional programming: there are a whole host of useful functions, many of which can be implemented in terms of each other.
-*/
 
-// My solution:
+## My Solution
+
+**JavaScript**
+
+```js
 const dropWhile = (arr, pred) => {
-  const arrCopy = [...arr];
-  while (arrCopy.length && pred(arrCopy[0])) arrCopy.shift();
-  return arrCopy;
-};
-
-// Top user solution:
-function dropWhile(arr, pred) {
-  for (var i = 0; i < arr.length && pred(arr[i]); ++i);
-  return arr.slice(i);
-}
-
-// Another good user solution:
-function dropWhile(arr, pred) {
-  const idx = arr.findIndex((elem) => !pred(elem));
+  const idx = arr.findIndex((v) => !pred(v));
   return idx < 0 ? [] : arr.slice(idx);
-}
+};
+```
+
+```js
+const dropWhile = (arr, pred) => {
+  let i = 0;
+  while (arr.length && pred(arr[i])) i++;
+  return arr.slice(i);
+};
+```
+
+**Python**
+
+```py
+def drop_while(arr, pred):
+    i = 0
+    while (i < len(arr) and pred(arr[i])):
+        i += 1
+    return arr[i:]
+```
+
+### User Solution
+
+**Python**
+
+```py
+def drop_while(lst, pred):
+    for i, elem in enumerate(lst):
+        if not pred(elem):
+            return lst[i:]
+    return []
+```
