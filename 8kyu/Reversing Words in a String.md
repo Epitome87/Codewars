@@ -6,7 +6,7 @@ You need to write a function that reverses the words in a given string. A word c
 
 As the input may have trailing spaces, you will also need to ignore unnecessary whitespace.
 
-Example (Input --> Output)
+**Example (Input --> Output)**
 
 ```
 "Hello World" --> "World Hello"
@@ -15,6 +15,15 @@ Example (Input --> Output)
 
 ## My solution
 
+**JavaScript**
+
 ```js
 const reverse = (string) => string.split(' ').reverse().join(' ');
+```
+
+**Python**
+
+```py
+def reverse(st):
+    return ' '.join(st.split()[::-1])
 ```
