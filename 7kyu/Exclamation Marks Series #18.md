@@ -1,9 +1,12 @@
-/*
-Description:
+# [Exclamation Marks Series #18: Simple Slot Machine](https://www.codewars.com/kata/57fb4b289610ce39f70000de)
+
+## Description
+
 You are playing a simple slot machine that only contains exclamation marks and question marks. Every time the slot machine is started, a string of 5 length is obtained. If you're lucky enough to get a Special permutation, you'll win the bonus. Give you a string s, return the highest bonus.
 
 Bouns list:
 
+```
 Five-of-a-Kind:   ---- 1000
 "!!!!!" or "?????"
 
@@ -28,17 +31,25 @@ such as "?!??!","!!?!?"
 
 Others              ---- 0
 such as "?!?!?","!?!?!"
-Examples
-slot("!!!!!") === 1000
-slot("!!!!?") === 800
-slot("!!!??") === 500
-slot("!!!?!") === 300
-slot("!!?!!") === 200
-slot("!!?!?") === 100
-slot("!?!?!") === 0
-*/
+```
 
-// My solution:
+**Examples**
+
+```js
+slot('!!!!!') === 1000;
+slot('!!!!?') === 800;
+slot('!!!??') === 500;
+slot('!!!?!') === 300;
+slot('!!?!!') === 200;
+slot('!!?!?') === 100;
+slot('!?!?!') === 0;
+```
+
+## My Solution
+
+**JavaScript**
+
+```js
 const slot = (s) => {
   if (/\?{5}|\!{5}/.test(s)) return 1000;
   if (/\?{4}|\!{4}/.test(s)) return 800;
@@ -48,8 +59,13 @@ const slot = (s) => {
   if (/\?{2}|\!{2}/.test(s)) return 100;
   return 0;
 };
+```
 
-// Top user solution:
+### User Solution
+
+**JavaScript**
+
+```js
 function slot(s) {
   var c = s
     .match(/([?!])\1*/g)
@@ -68,3 +84,4 @@ function slot(s) {
       return 0;
   }
 }
+```
